@@ -2,7 +2,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 
 export const metadata = {
-  title: 'Enzo Turcovic — Fullstack Dev',
+  title: 'Portfólio — Enzo Turcovic',
   description: 'Portfólio de Enzo Alves Turcovic, desenvolvedor Fullstack.',
 }
 
