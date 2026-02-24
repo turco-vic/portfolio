@@ -1,0 +1,59 @@
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.fullWidth { grid-column: 1 / -1; }
+
+.bioTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.bioText {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.stackSection { margin-bottom: 20px; }
+.stackSection:last-child { margin-bottom: 0; }
+
+.stackLabel {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.numbersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.numVal {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.numLabel {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; padding: 0 20px 60px; }
+  .recGrid { grid-template-columns: 1fr; }
+  .numbersGrid { grid-template-columns: 1fr 1fr; }
+}
