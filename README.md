@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ~/enzo — Portfólio Pessoal
 
-## Getting Started
+Site de portfólio de **Enzo Alves Turcovic**, desenvolvedor Fullstack de Campinas/SP.  
+Construído com Next.js 16, React 19 e CSS Modules, com visual dark inspirado em terminais.
 
-First, run the development server:
+---
+
+## Páginas
+
+| Rota | Descrição |
+|---|---|
+| `/` | Página inicial com apresentação e terminal interativo |
+| `/sobre` | Bio, formação, stack e recomendações |
+| `/projetos` | Listagem de projetos com busca e filtro por status |
+| `/projetos/[id]` | Página de detalhes de cada projeto |
+| `/contato` | Links de contato (e-mail, LinkedIn, GitHub, WhatsApp) e formulário |
+
+---
+
+## Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org) (App Router)
+- **UI:** React 19 + CSS Modules
+- **Lint:** ESLint + eslint-config-next
+
+---
+
+## Rodando localmente
 
 ```bash
+# instalar dependências
+npm install
+
+# iniciar servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Scripts disponíveis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Inicia o servidor em modo desenvolvimento |
+| `npm run build` | Gera o build de produção |
+| `npm run start` | Inicia o servidor em modo produção |
+| `npm run lint` | Executa o linter |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── page.jsx          # Home
+│   ├── layout.jsx        # Layout raiz (Nav global)
+│   ├── globals.css       # Variáveis CSS e estilos globais
+│   ├── sobre/            # Página sobre
+│   ├── projetos/         # Listagem e detalhes de projetos
+│   └── contato/          # Página de contato
+├── components/
+│   ├── Nav.jsx           # Barra de navegação
+│   └── CircuitDeco.jsx   # Decoração SVG de circuito
+├── data/
+│   └── index.js          # Dados dos projetos, stack e recomendações
+└── styles/               # Estilos compartilhados
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Contato
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **E-mail:** enzoturcovic@email.com  
+- **LinkedIn:** [linkedin.com/in/enzo-alves-turcovic](https://linkedin.com/in/enzo-alves-turcovic-10b7ab201)  
+- **GitHub:** [github.com/turco-vic](https://github.com/turco-vic)
