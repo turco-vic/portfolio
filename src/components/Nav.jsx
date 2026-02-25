@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { Sun, Moon } from 'lucide-react'
 import styles from '../styles/Nav.module.css'
 
 const links = [
@@ -50,7 +51,7 @@ export default function Nav() {
           aria-label="Alternar tema"
           title={theme === 'dark' ? 'Modo claro' : 'Modo escuro'}
         >
-          {theme === 'dark' ? '☀️' : '🌙'}
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </div>
     </nav>
