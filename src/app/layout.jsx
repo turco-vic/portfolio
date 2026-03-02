@@ -1,6 +1,7 @@
 import './globals.css'
 import Nav from '@/components/Nav'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: 'Portfólio — Enzo Turcovic',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
