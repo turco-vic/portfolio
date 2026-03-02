@@ -15,6 +15,7 @@
   --danger: #f85149;
   --warning: #e3b341;
   --nav-bg: rgba(9, 11, 16, 0.85);
+  --text-stroke: rgba(230, 237, 243, 0.25);
 }
 
 [data-theme="light"] {
@@ -32,6 +33,7 @@
   --danger: #d32f2f;
   --warning: #f57f17;
   --nav-bg: rgba(240, 244, 248, 0.88);
+  --text-stroke: rgba(13, 16, 23, 0.2);
 }
 
 * {

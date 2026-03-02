@@ -54,8 +54,7 @@
 }
 
 .role {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(230, 237, 243, 0.25);
+  color: var(--text);
   display: block;
 }
 
