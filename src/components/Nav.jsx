@@ -8,7 +8,7 @@ import styles from '../styles/Nav.module.css'
 
 const links = [
   { href: '/projetos', label: 'projetos', prefix: '01.' },
-  { href: '/sobre',   label: 'sobre',   prefix: '02.' },
+  { href: '/sobre', label: 'sobre', prefix: '02.' },
   { href: '/contato', label: 'contato', prefix: '03.' },
 ]
 
@@ -42,41 +42,43 @@ export default function Nav() {
   }
 
   return (
-    <nav className={styles.nav}>
-      <Link href="/" className={styles.logo}>
-        <span>~/</span>dev
-      </Link>
+    <>
+      <nav className={styles.nav}>
+        <Link href="/" className={styles.logo}>
+          <span>~/</span>dev
+        </Link>
 
-      <button
-        className={styles.hamburger}
-        onClick={() => setMenuOpen((v) => !v)}
-        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-      >
-        {menuOpen ? <X size={22} /> : <Menu size={22} />}
-      </button>
+        <button
+          className={styles.hamburger}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+
+        <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
+          {links.map(({ href, label, prefix }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${styles.btn} ${pathname === href ? styles.active : ''}`}
+              data-prefix={prefix}
+            >
+              {label}
+            </Link>
+          ))}
+          <button
+            className={styles.themeBtn}
+            onClick={toggleTheme}
+            aria-label="Alternar tema"
+            title={theme === 'dark' ? 'Modo claro' : 'Modo escuro'}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+        </div>
+      </nav>
 
       {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)} />}
-
-      <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
-        {links.map(({ href, label, prefix }) => (
-          <Link
-            key={href}
-            href={href}
-            className={`${styles.btn} ${pathname === href ? styles.active : ''}`}
-            data-prefix={prefix}
-          >
-            {label}
-          </Link>
-        ))}
-        <button
-          className={styles.themeBtn}
-          onClick={toggleTheme}
-          aria-label="Alternar tema"
-          title={theme === 'dark' ? 'Modo claro' : 'Modo escuro'}
-        >
-          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
-      </div>
-    </nav>
+    </>
   )
 }

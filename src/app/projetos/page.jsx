@@ -7,13 +7,13 @@ import ProjectCard from '@/components/ProjectCard'
 import styles from './projetos.module.css'
 
 const filters = [
-  { key: 'all',  label: 'todos' },
+  { key: 'all', label: 'todos' },
   { key: 'done', label: 'finalizados', icon: CircleCheck },
-  { key: 'dev',  label: 'em dev', icon: Wrench },
+  { key: 'dev', label: 'em dev', icon: Wrench },
 ]
 
 export default function Projetos() {
-  const [query, setQuery]   = useState('')
+  const [query, setQuery] = useState('')
   const [filter, setFilter] = useState('all')
 
   const filtered = projects.filter((p) => {
@@ -51,13 +51,12 @@ export default function Projetos() {
             <button
               key={key}
               onClick={() => setFilter(key)}
-              className={`${styles.filterBtn} ${
-                filter === key
+              className={`${styles.filterBtn} ${filter === key
                   ? key === 'dev'
                     ? styles.activeDev
                     : styles.active
                   : ''
-              }`}
+                }`}
             >
               {Icon && <Icon size={13} />} {label}
             </button>

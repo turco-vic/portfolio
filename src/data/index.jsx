@@ -11,9 +11,9 @@ export const projects = [
     icon: 'Calendar',
     color: '#2979ff',
     links: [
-      { category: 'github',       label: 'Repositório',  url: 'https://github.com/turco-vic/sistema-agendamentos' },
-      { category: 'deploy',       label: 'Ver online',    url: 'https://agendamentos-app.vercel.app' },
-      { category: 'documentação', label: 'README',        url: 'https://github.com/turco-vic/sistema-agendamentos#readme' },
+      { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/sistema-agendamentos' },
+      { category: 'deploy', label: 'Ver online', url: 'https://agendamentos-app.vercel.app' },
+      { category: 'documentação', label: 'README', url: 'https://github.com/turco-vic/sistema-agendamentos#readme' },
     ],
     startDate: 'ago 2025',
     endDate: 'nov 2025',
@@ -57,7 +57,7 @@ export const projects = [
     icon: 'CheckCircle',
     color: '#00b0ff',
     links: [
-      { category: 'github',       label: 'Repositório',      url: 'https://github.com/turco-vic/task-api' },
+      { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/task-api' },
       { category: 'documentação', label: 'Swagger / OpenAPI', url: 'https://task-api-demo.railway.app/docs' },
       { category: 'documentação', label: 'Postman Collection', url: 'https://www.postman.com/turco-vic/task-api' },
     ],
@@ -102,7 +102,7 @@ export const projects = [
     icon: 'Wallet',
     color: '#448aff',
     links: [
-      { category: 'github', label: 'Repositório',  url: 'https://github.com/turco-vic/finance-app' },
+      { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/finance-app' },
       { category: 'design', label: 'Protótipo Figma', url: 'https://figma.com/file/abc123/finance-app' },
     ],
     startDate: 'jan 2026',
@@ -147,7 +147,7 @@ export const projects = [
     color: '#82b1ff',
     links: [
       { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/portfolio' },
-      { category: 'deploy', label: 'Ver online',   url: 'https://enzo-turcovic.vercel.app' },
+      { category: 'deploy', label: 'Ver online', url: 'https://enzo-turcovic.vercel.app' },
     ],
     startDate: 'fev 2026',
     endDate: 'mar 2026',
@@ -190,9 +190,9 @@ export const projects = [
     icon: 'Ticket',
     color: '#e3b341',
     links: [
-      { category: 'github',       label: 'Repositório',    url: 'https://github.com/turco-vic/helpdesk' },
+      { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/helpdesk' },
       { category: 'documentação', label: 'Wiki do projeto', url: 'https://github.com/turco-vic/helpdesk/wiki' },
-      { category: 'design',       label: 'Wireframes Figma', url: 'https://figma.com/file/xyz789/helpdesk' },
+      { category: 'design', label: 'Wireframes Figma', url: 'https://figma.com/file/xyz789/helpdesk' },
     ],
     startDate: 'fev 2026',
     endDate: null,
@@ -236,7 +236,7 @@ export const projects = [
     color: '#f85149',
     links: [
       { category: 'github', label: 'Repositório', url: 'https://github.com/turco-vic/github-dashboard' },
-      { category: 'deploy', label: 'Ver online',   url: 'https://gh-metrics.vercel.app' },
+      { category: 'deploy', label: 'Ver online', url: 'https://gh-metrics.vercel.app' },
     ],
     startDate: 'mar 2026',
     endDate: null,
@@ -272,8 +272,8 @@ export const projects = [
 // ── Stack ──────────────────────────────────────────────────
 export const stack = {
   frontend: ['JavaScript', 'TypeScript', 'React', 'React Native', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Expo', 'Vue.js'],
-  backend:  ['Node.js', 'Express.js', 'PostgreSQL', 'MySQL'],
-  tools:    ['Git', 'GitHub', 'VS Code', 'Postman', 'Swagger', 'Figma'],
+  backend: ['Node.js', 'Express.js', 'PostgreSQL', 'MySQL'],
+  tools: ['Git', 'GitHub', 'VS Code', 'Postman', 'Swagger', 'Figma'],
 }
 
 // ── Recommendations ────────────────────────────────────────

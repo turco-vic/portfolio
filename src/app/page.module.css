@@ -97,9 +97,17 @@
   border-radius: 50%;
 }
 
-.red    { background: #f85149; }
-.yellow { background: #e3b341; }
-.green  { background: var(--accent); }
+.red {
+  background: #f85149;
+}
+
+.yellow {
+  background: #e3b341;
+}
+
+.green {
+  background: var(--accent);
+}
 
 .termTitle {
   color: var(--muted);
@@ -113,10 +121,21 @@
   line-height: 2;
 }
 
-.tComment { color: var(--muted); }
-.tKey     { color: var(--accent2); }
-.tVal     { color: var(--accent-bright); }
-.tStr     { color: #82b1ff; }
+.tComment {
+  color: var(--muted);
+}
+
+.tKey {
+  color: var(--accent2);
+}
+
+.tVal {
+  color: var(--accent-bright);
+}
+
+.tStr {
+  color: #82b1ff;
+}
 
 .cursor {
   display: inline-block;
@@ -129,23 +148,81 @@
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 100px 20px 60px; }
-  .heading { letter-spacing: -1px; margin-bottom: 3rem; }
-  .name { margin-bottom: 1.5rem; }
-  .desc { font-size: 0.82rem; margin-bottom: 36px; }
-  .terminal { max-width: 100%; }
-  .termBody { font-size: 0.72rem; padding: 16px; overflow-x: auto; }
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .heading {
+    letter-spacing: -1px;
+    margin-bottom: 3rem;
+  }
+
+  .name {
+    margin-bottom: 1.5rem;
+  }
+
+  .desc {
+    font-size: 0.82rem;
+    margin-bottom: 36px;
+  }
+
+  .terminal {
+    max-width: 100%;
+  }
+
+  .termBody {
+    font-size: 0.72rem;
+    padding: 16px;
+    overflow-x: auto;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 90px 16px 48px; }
-  .tag { font-size: 0.65rem; padding: 5px 12px; margin-bottom: 24px; }
-  .heading { margin-bottom: 2rem; }
-  .name { margin-bottom: 1rem; }
-  .desc { font-size: 0.78rem; margin-bottom: 28px; line-height: 1.7; }
-  .actions { gap: 10px; margin-bottom: 40px; }
-  .termBody { font-size: 0.65rem; padding: 14px; line-height: 1.8; }
-  .termBar { padding: 8px 12px; }
-  .termDot { width: 10px; height: 10px; }
-  .termTitle { font-size: 0.65rem; }
+  .hero {
+    padding: 90px 16px 48px;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    margin-bottom: 24px;
+  }
+
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    margin-bottom: 1rem;
+  }
+
+  .desc {
+    font-size: 0.78rem;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .actions {
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .termBody {
+    font-size: 0.65rem;
+    padding: 14px;
+    line-height: 1.8;
+  }
+
+  .termBar {
+    padding: 8px 12px;
+  }
+
+  .termDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .termTitle {
+    font-size: 0.65rem;
+  }
 }

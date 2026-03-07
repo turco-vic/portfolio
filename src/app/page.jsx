@@ -24,8 +24,8 @@ export default function Home() {
 
         <div className={styles.actions}>
           <Link href="/projetos" className="btn btn-primary"><Play size={14} /> ver projetos</Link>
-          <Link href="/sobre"    className="btn btn-ghost">sobre</Link>
-          <Link href="/contato"  className="btn btn-ghost">contato <ArrowRight size={14} /></Link>
+          <Link href="/sobre" className="btn btn-ghost">sobre</Link>
+          <Link href="/contato" className="btn btn-ghost">contato <ArrowRight size={14} /></Link>
         </div>
 
         <div className={styles.terminal}>

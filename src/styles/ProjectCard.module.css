@@ -1,112 +1,135 @@
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.25s;
-  text-decoration: none;
-  display: block;
-  color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
 }
 
 .card:hover {
-  border-color: rgba(41, 121, 255, 0.45);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(41, 121, 255, 0.1);
+    border-color: rgba(41, 121, 255, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(41, 121, 255, 0.1);
 }
 
 .thumb {
-  height: 160px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumbPattern {
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
 }
 
 .thumbIcon {
-  font-size: 2.5rem;
-  position: relative;
-  z-index: 1;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
-  font-size: 0.65rem;
-  padding: 3px 10px;
-  border-radius: 100px;
-  font-family: 'JetBrains Mono', monospace;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .badgeDone {
-  background: rgba(41, 121, 255, 0.15);
-  color: var(--accent-bright);
-  border: 1px solid rgba(41, 121, 255, 0.4);
+    background: rgba(41, 121, 255, 0.15);
+    color: var(--accent-bright);
+    border: 1px solid rgba(41, 121, 255, 0.4);
 }
 
 .badgeDev {
-  background: rgba(0, 176, 255, 0.12);
-  color: var(--accent2);
-  border: 1px solid rgba(0, 176, 255, 0.35);
+    background: rgba(0, 176, 255, 0.12);
+    color: var(--accent2);
+    border: 1px solid rgba(0, 176, 255, 0.35);
 }
 
 .badgeDb {
-  background: rgba(130, 177, 255, 0.1);
-  color: var(--accent3);
-  border: 1px solid rgba(130, 177, 255, 0.3);
+    background: rgba(130, 177, 255, 0.1);
+    color: var(--accent3);
+    border: 1px solid rgba(130, 177, 255, 0.3);
 }
 
 .info {
-  padding: 20px;
+    padding: 20px;
 }
 
 .cardTitle {
-  font-family: 'Syne', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .cardDesc {
-  font-size: 0.78rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 16px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
 }
 
 .tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 
 .tag {
-  font-size: 0.65rem;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--surface2);
-  color: var(--muted);
-  border: 1px solid var(--border);
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    color: var(--muted);
+    border: 1px solid var(--border);
 }
 
 @media (max-width: 480px) {
-  .thumb { height: 130px; }
-  .thumbIcon { font-size: 2rem; }
-  .badge { font-size: 0.6rem; padding: 2px 8px; }
-  .info { padding: 16px; }
-  .cardTitle { font-size: 0.92rem; }
-  .cardDesc { font-size: 0.74rem; margin-bottom: 12px; }
-  .tag { font-size: 0.6rem; padding: 2px 6px; }
+    .thumb {
+        height: 130px;
+    }
+
+    .thumbIcon {
+        font-size: 2rem;
+    }
+
+    .badge {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+    }
+
+    .info {
+        padding: 16px;
+    }
+
+    .cardTitle {
+        font-size: 0.92rem;
+    }
+
+    .cardDesc {
+        font-size: 0.74rem;
+        margin-bottom: 12px;
+    }
+
+    .tag {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
 }
