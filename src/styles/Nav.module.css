@@ -49,10 +49,14 @@
   display: none;
 }
 
-.links {
+.desktopLinks {
   display: flex;
   gap: 4px;
   align-items: center;
+}
+
+.drawer {
+  display: none;
 }
 
 .btn {
@@ -118,6 +122,10 @@
     display: flex;
   }
 
+  .desktopLinks {
+    display: none;
+  }
+
   .overlay {
     display: block;
     position: fixed;
@@ -126,7 +134,8 @@
     z-index: 101;
   }
 
-  .links {
+  .drawer {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
@@ -144,7 +153,7 @@
     overflow-y: auto;
   }
 
-  .linksOpen {
+  .drawerOpen {
     transform: translateX(0);
   }
 
