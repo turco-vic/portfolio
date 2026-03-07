@@ -100,7 +100,7 @@ export default function Sobre() {
             {[
               { val: '2+', label: 'anos desenvolvendo', color: 'var(--accent-bright)' },
               { val: '9+', label: 'tecnologias dominadas', color: 'var(--accent2)' },
-              { val: '2', label: 'formações SENAI', color: 'var(--accent3)' },
+              { val: '2', label: 'formações', color: 'var(--accent3)' },
               { val: '∞', label: 'vontade de aprender', color: 'var(--warning)' },
             ].map(({ val, label, color }) => (
               <div key={label}>
