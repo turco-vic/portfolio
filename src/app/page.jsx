@@ -14,7 +14,7 @@ export default function Home() {
 
         <h1 className={styles.heading}>
           <span className={styles.name}>Enzo Turcovic</span>
-          <span className={styles.role}>Fullstack Dev.</span>
+          <span className={styles.role}>Software Developer.</span>
         </h1>
 
         <p className={styles.desc}>
