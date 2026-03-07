@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Globe, Server, Wrench } from 'lucide-react'
 import { stack, recommendations } from '@/data'
+import StackIcon from '@/components/StackIcon'
 import styles from './sobre.module.css'
 
 export const metadata = { title: 'Sobre — Enzo Turcovic' }
@@ -69,7 +70,7 @@ export default function Sobre() {
             <div className={styles.stackLabel}><Globe size={14} /> Front-end</div>
             <div className="skills-grid">
               {stack.frontend.map(s => (
-                <span key={s} className="skill-tag frontend">{s}</span>
+                <span key={s} className="skill-tag frontend"><StackIcon name={s} size={14} /> {s}</span>
               ))}
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function Sobre() {
             <div className={styles.stackLabel}><Server size={14} /> Back-end & Banco</div>
             <div className="skills-grid">
               {stack.backend.map(s => (
-                <span key={s} className={`skill-tag ${s.includes('SQL') || s === 'MySQL' ? 'db' : 'backend'}`}>{s}</span>
+                <span key={s} className={`skill-tag ${s.includes('SQL') || s === 'MySQL' ? 'db' : 'backend'}`}><StackIcon name={s} size={14} /> {s}</span>
               ))}
             </div>
           </div>
@@ -87,7 +88,7 @@ export default function Sobre() {
             <div className={styles.stackLabel}><Wrench size={14} /> Ferramentas</div>
             <div className="skills-grid">
               {stack.tools.map(s => (
-                <span key={s} className="skill-tag devops">{s}</span>
+                <span key={s} className="skill-tag devops"><StackIcon name={s} size={14} /> {s}</span>
               ))}
             </div>
           </div>
