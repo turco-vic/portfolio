@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { CircleCheck, Wrench, Search, SearchX } from 'lucide-react'
 import { projects } from '@/data'
+import ProjectCard from '@/components/ProjectCard'
 import styles from './projetos.module.css'
 
 const filters = [
   { key: 'all',  label: 'todos' },
-  { key: 'done', label: '✅ finalizados' },
-  { key: 'dev',  label: '🔧 em dev' },
+  { key: 'done', label: 'finalizados', icon: CircleCheck },
+  { key: 'dev',  label: 'em dev', icon: Wrench },
 ]
 
 export default function Projetos() {
@@ -36,7 +37,7 @@ export default function Projetos() {
 
       <div className={styles.controls}>
         <div className={styles.searchWrap}>
-          <span className={styles.searchIcon}>⌕</span>
+          <span className={styles.searchIcon}><Search size={16} /></span>
           <input
             className={styles.searchInput}
             type="text"
@@ -46,7 +47,7 @@ export default function Projetos() {
           />
         </div>
         <div className={styles.filterGroup}>
-          {filters.map(({ key, label }) => (
+          {filters.map(({ key, label, icon: Icon }) => (
             <button
               key={key}
               onClick={() => setFilter(key)}
@@ -58,7 +59,7 @@ export default function Projetos() {
                   : ''
               }`}
             >
-              {label}
+              {Icon && <Icon size={13} />} {label}
             </button>
           ))}
         </div>
@@ -67,43 +68,12 @@ export default function Projetos() {
       <div className={styles.grid}>
         {filtered.length === 0 ? (
           <div className={styles.empty}>
-            <div className={styles.emptyIcon}>🔍</div>
+            <div className={styles.emptyIcon}><SearchX size={32} /></div>
             Nenhum projeto encontrado
           </div>
         ) : (
           filtered.map((p) => (
-            <Link key={p.id} href={`/projetos/${p.id}`} className={styles.card}>
-              <div className={styles.thumb} style={{ background: `${p.color}18` }}>
-                <div
-                  className={styles.thumbPattern}
-                  style={{
-                    background: `radial-gradient(circle at 70% 50%, ${p.color}20 0%, transparent 60%)`,
-                  }}
-                />
-                <span className={styles.thumbIcon}>{p.emoji}</span>
-                <span className={`${styles.badge} ${p.status === 'done' ? styles.badgeDone : styles.badgeDev}`}>
-                  {p.status === 'done' ? '✅ finalizado' : '🔧 em dev'}
-                </span>
-                {p.hasDb && (
-                  <span className={`${styles.badge} ${styles.badgeDb}`} style={{ top: '44px' }}>
-                    🗄 banco
-                  </span>
-                )}
-              </div>
-
-              <div className={styles.info}>
-                <h3 className={styles.cardTitle}>{p.title}</h3>
-                <p className={styles.cardDesc}>{p.desc}</p>
-                <div className={styles.tags}>
-                  {p.stack.slice(0, 4).map((s) => (
-                    <span key={s} className={styles.tag}>{s}</span>
-                  ))}
-                  {p.stack.length > 4 && (
-                    <span className={styles.tag}>+{p.stack.length - 4}</span>
-                  )}
-                </div>
-              </div>
-            </Link>
+            <ProjectCard key={p.id} project={p} />
           ))
         )}
       </div>

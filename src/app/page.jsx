@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Play, ArrowRight } from 'lucide-react'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -22,9 +23,9 @@ export default function Home() {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/projetos" className="btn btn-primary">▶ ver projetos</Link>
+          <Link href="/projetos" className="btn btn-primary"><Play size={14} /> ver projetos</Link>
           <Link href="/sobre"    className="btn btn-ghost">sobre</Link>
-          <Link href="/contato"  className="btn btn-ghost">contato →</Link>
+          <Link href="/contato"  className="btn btn-ghost">contato <ArrowRight size={14} /></Link>
         </div>
 
         <div className={styles.terminal}>

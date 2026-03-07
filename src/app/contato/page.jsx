@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
+import { Mail, Linkedin, Github, Phone, ArrowRight, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import styles from './contato.module.css'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqedwprv'
@@ -35,25 +37,25 @@ export default function Contato() {
 
   const links = [
     {
-      href: 'mailto:enzoturcovic@email.com',
-      icon: '✉',
+      href: 'mailto:enzoturcovic@gmail.com',
+      icon: <Mail size={18} />,
       label: 'email',
-      val: 'enzoturcovic@email.com',
+      val: 'enzoturcovic@gmail.com',
       color: 'rgba(41,121,255,0.12)',
       textColor: 'var(--accent-bright)',
     },
     {
-      href: 'https://linkedin.com/in/enzo-alves-turcovic-10b7ab201',
-      icon: 'in',
+      href: 'https://www.linkedin.com/in/enzoturcovic/',
+      icon: <Linkedin size={18} />,
       label: 'linkedin',
-      val: 'linkedin.com/in/enzo-alves-turcovic',
+      val: 'linkedin.com/in/enzoturcovic',
       color: 'rgba(0,176,255,0.1)',
       textColor: 'var(--accent2)',
       external: true,
     },
     {
       href: 'https://github.com/turco-vic',
-      icon: '⌥',
+      icon: <Github size={18} />,
       label: 'github',
       val: 'github.com/turco-vic',
       color: 'rgba(130,177,255,0.1)',
@@ -62,7 +64,7 @@ export default function Contato() {
     },
     {
       href: 'https://wa.me/5519981853201',
-      icon: '✆',
+      icon: <Phone size={18} />,
       label: 'whatsapp',
       val: '+55 (19) 98185-3201',
       color: 'rgba(41,121,255,0.1)',
@@ -72,9 +74,9 @@ export default function Contato() {
   ]
 
   const btnLabel = {
-    idle:    'enviar mensagem →',
+    idle:    'enviar mensagem',
     sending: 'enviando...',
-    sent:    'mensagem enviada ✓',
+    sent:    'mensagem enviada',
     error:   'erro ao enviar — tente novamente',
   }
 
@@ -87,7 +89,18 @@ export default function Contato() {
 
   return (
     <main className="page-wrapper fade-in">
-      <div className="page-header">
+      <div className={styles.profileSection}>
+        <div className={styles.profileImageWrap}>
+          <Image
+            src="/images/profile.jpeg"
+            alt="Enzo Turcovic"
+            width={140}
+            height={140}
+            className={styles.profileImage}
+            priority
+          />
+          <div className={styles.profileGlow} />
+        </div>
         <div className="page-label">// 03 . contato</div>
         <h1 className="page-title">Bora conversar</h1>
       </div>
@@ -115,7 +128,7 @@ export default function Contato() {
                   <div className={styles.linkLabel}>{label}</div>
                   <div className={styles.linkVal}>{val}</div>
                 </div>
-                <span className={styles.linkArrow}>→</span>
+                <span className={styles.linkArrow}><ArrowRight size={14} /></span>
               </a>
             ))}
           </div>
@@ -158,7 +171,11 @@ export default function Contato() {
               className={btnClass}
               disabled={status === 'sending' || status === 'sent'}
             >
-              {btnLabel[status]}
+              {status === 'idle' && <Send size={14} />}
+              {status === 'sending' && <Loader2 size={14} className={styles.spinning} />}
+              {status === 'sent' && <CheckCircle size={14} />}
+              {status === 'error' && <AlertCircle size={14} />}
+              {' '}{btnLabel[status]}
             </button>
           </form>
         </div>

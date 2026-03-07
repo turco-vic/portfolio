@@ -7,7 +7,7 @@
 .back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: none;
   border: none;
   color: var(--muted);
@@ -21,26 +21,56 @@
 
 .back:hover { color: var(--accent); }
 
-.badges { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .badge {
   font-size: 0.65rem;
   padding: 4px 12px;
   border-radius: 100px;
   font-family: 'JetBrains Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .badgeDone { background: rgba(41,121,255,0.15); color: var(--accent-bright); border: 1px solid rgba(41,121,255,0.4); }
 .badgeDev  { background: rgba(0,176,255,0.12);  color: var(--accent2);       border: 1px solid rgba(0,176,255,0.35); }
 .badgeDb   { background: rgba(41,121,255,0.07); color: var(--accent3);       border: 1px solid rgba(130,177,255,0.3); }
 
+.dates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.dateIcon { font-size: 0.9rem; }
+.dateSep  { color: var(--accent); }
+
 .title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.6rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 16px;
   line-height: 1.1;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .desc {
@@ -48,6 +78,8 @@
   color: var(--muted);
   line-height: 1.9;
   margin-bottom: 40px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .dbWarning {
@@ -75,7 +107,226 @@
   font-weight: 400;
 }
 
-.links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+/* Documentação — requisitos */
+.docList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.docItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.7;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.docItem:hover {
+  border-color: rgba(41, 121, 255, 0.3);
+}
+
+.docBullet {
+  color: var(--accent-bright);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Funcionalidades */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.6;
+  transition: all 0.2s;
+}
+
+.featureCard:hover {
+  border-color: rgba(0, 176, 255, 0.35);
+  background: rgba(0, 176, 255, 0.04);
+}
+
+.featureIndex {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  color: var(--accent2);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Arquitetura */
+.archBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.archIcon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Desafios */
+.challengesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challengeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(227, 179, 65, 0.05);
+  border: 1px solid rgba(227, 179, 65, 0.2);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.7;
+  transition: border-color 0.2s;
+}
+
+.challengeItem:hover {
+  border-color: rgba(227, 179, 65, 0.45);
+}
+
+.challengeIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Aprendizados */
+.learningsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learningItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(41, 121, 255, 0.04);
+  border: 1px solid rgba(41, 121, 255, 0.15);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.7;
+  transition: border-color 0.2s;
+}
+
+.learningItem:hover {
+  border-color: rgba(41, 121, 255, 0.4);
+}
+
+.learningIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Links */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.linkCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.linkCard:hover {
+  border-color: var(--accent);
+  background: rgba(41, 121, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(41, 121, 255, 0.1);
+  color: var(--accent-bright);
+  flex-shrink: 0;
+}
+
+.linkInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.linkCategory {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.linkLabel {
+  font-size: 0.82rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkArrow {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.linkCard:hover .linkArrow {
+  color: var(--accent-bright);
+}
 
 .noDemo {
   font-size: 0.78rem;
@@ -85,4 +336,30 @@
 
 @media (max-width: 768px) {
   .wrapper { padding: 40px 20px 60px; }
+  .topRow { flex-direction: column; align-items: flex-start; }
+  .featuresGrid { grid-template-columns: 1fr; }
+  .linksGrid { grid-template-columns: 1fr; }
+  .dbWarning { font-size: 0.75rem; padding: 14px 16px; }
+  .archBox { padding: 16px 18px; }
+}
+
+@media (max-width: 480px) {
+  .wrapper { padding: 32px 16px 48px; }
+  .back { font-size: 0.72rem; margin-bottom: 28px; }
+  .badge { font-size: 0.6rem; padding: 3px 10px; }
+  .dates { font-size: 0.68rem; padding: 5px 12px; gap: 6px; }
+  .title { margin-bottom: 12px; }
+  .desc { font-size: 0.82rem; line-height: 1.8; margin-bottom: 32px; }
+  .sectionLabel { font-size: 0.62rem; letter-spacing: 2px; margin-bottom: 12px; }
+  .docItem { padding: 8px 12px; font-size: 0.78rem; }
+  .featureCard { padding: 12px 14px; font-size: 0.78rem; }
+  .archBox { font-size: 0.78rem; gap: 10px; flex-direction: column; }
+  .archIcon { margin-top: 0; }
+  .challengeItem,
+  .learningItem { padding: 12px 14px; font-size: 0.78rem; }
+  .linkCard { padding: 14px 16px; gap: 12px; }
+  .linkIcon { width: 36px; height: 36px; border-radius: 8px; }
+  .linkCategory { font-size: 0.55rem; }
+  .linkLabel { font-size: 0.78rem; }
+  .dbWarning { flex-direction: column; gap: 8px; font-size: 0.72rem; }
 }

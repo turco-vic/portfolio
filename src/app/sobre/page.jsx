@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { Globe, Server, Wrench } from 'lucide-react'
 import { stack, recommendations } from '@/data'
 import styles from './sobre.module.css'
 
@@ -6,7 +8,18 @@ export const metadata = { title: 'Sobre — Enzo Turcovic' }
 export default function Sobre() {
   return (
     <main className="page-wrapper fade-in">
-      <div className="page-header">
+      <div className={styles.profileSection}>
+        <div className={styles.profileImageWrap}>
+          <Image
+            src="/images/profile.jpeg"
+            alt="Enzo Turcovic"
+            width={160}
+            height={160}
+            className={styles.profileImage}
+            priority
+          />
+          <div className={styles.profileGlow} />
+        </div>
         <div className="page-label">// 01 . sobre</div>
         <h1 className="page-title">Quem sou eu</h1>
       </div>
@@ -53,7 +66,7 @@ export default function Sobre() {
           <div className="card-label">// stack & ferramentas</div>
 
           <div className={styles.stackSection}>
-            <div className={styles.stackLabel}>🌐 Front-end</div>
+            <div className={styles.stackLabel}><Globe size={14} /> Front-end</div>
             <div className="skills-grid">
               {stack.frontend.map(s => (
                 <span key={s} className="skill-tag frontend">{s}</span>
@@ -62,7 +75,7 @@ export default function Sobre() {
           </div>
 
           <div className={styles.stackSection}>
-            <div className={styles.stackLabel}>⚙ Back-end & Banco</div>
+            <div className={styles.stackLabel}><Server size={14} /> Back-end & Banco</div>
             <div className="skills-grid">
               {stack.backend.map(s => (
                 <span key={s} className={`skill-tag ${s.includes('SQL') || s === 'MySQL' ? 'db' : 'backend'}`}>{s}</span>
@@ -71,7 +84,7 @@ export default function Sobre() {
           </div>
 
           <div className={styles.stackSection}>
-            <div className={styles.stackLabel}>🔧 Ferramentas</div>
+            <div className={styles.stackLabel}><Wrench size={14} /> Ferramentas</div>
             <div className="skills-grid">
               {stack.tools.map(s => (
                 <span key={s} className="skill-tag devops">{s}</span>

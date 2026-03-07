@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, Menu, X } from 'lucide-react'
 import styles from '../styles/Nav.module.css'
 
 const links = [
@@ -15,12 +15,24 @@ const links = [
 export default function Nav() {
   const pathname = usePathname()
   const [theme, setTheme] = useState('dark')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme') || 'dark'
     setTheme(saved)
     document.documentElement.setAttribute('data-theme', saved)
   }, [])
+
+  // Fecha o menu ao mudar de rota
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
+  // Bloqueia scroll do body quando menu está aberto
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   function toggleTheme() {
     const next = theme === 'dark' ? 'light' : 'dark'
@@ -34,7 +46,18 @@ export default function Nav() {
       <Link href="/" className={styles.logo}>
         <span>~/</span>dev
       </Link>
-      <div className={styles.links}>
+
+      <button
+        className={styles.hamburger}
+        onClick={() => setMenuOpen((v) => !v)}
+        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+      >
+        {menuOpen ? <X size={22} /> : <Menu size={22} />}
+      </button>
+
+      {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)} />}
+
+      <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
         {links.map(({ href, label, prefix }) => (
           <Link
             key={href}
